@@ -4,84 +4,97 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'DM Sans', sans-serif;
-  }
+}
 
-  body{
+body {
     background-color: #f9f8f4;
     width: 100%;
     height: 100%;
-  }
-  .section1{
+    margin: 0;
+}
+
+.section1 {
     padding: 20px;
-  }
-  .header{
+}
+
+.header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     max-width: 1800px;
-    margin-inline: auto;
-  }
-  .navbar ul{
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.navbar ul {
     list-style: none;
     display: flex;
-  }
-  .navbar li{
-    margin: 10px;
-  }
+    flex-wrap: wrap; /* Added wrapping for responsiveness */
+    justify-content: center; /* Center items on smaller screens */
+}
 
-  .nav{
+.navbar li {
+    margin: 10px;
+}
+
+.nav {
     text-decoration: none;
     color: black;
-  }
- .button{
-  align-items: center;
-  text-align: center;
-  border-radius: 29px;
-  color: #ffffff;
-  font-size: 13px;
-  background-color: #2D2E52;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 10px 20px;
- }
- 
+}
+
+.button {
+    align-items: center;
+    text-align: center;
+    border-radius: 29px;
+    color: #ffffff;
+    font-size: 13px;
+    background-color: #2D2E52;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 20px;
+}
+
 .text {
-  max-width: 1800px;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  justify-content: space-around;
-  margin: auto;
+    max-width: 100%; /* Adjusted for responsiveness */
+    display: flex;
+    flex-direction: column; /* Stack content on smaller screens */
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
+    margin: 0 auto; /* Center content horizontally */
 }
 
 .content {
-  flex: 1;
+    flex: 1;
+    text-align: center; /* Center content on smaller screens */
+    margin: 20px; /* Added spacing between elements */
 }
 
 .image {
-  flex: 1;
+    flex: 1;
+    text-align: center; /* Center image on smaller screens */
 }
 
 .topic {
-  font-size: 81px;
-  font-weight: 450;
-  text-align: center;
-  letter-spacing: 0px;
-  color: #000000;
-  opacity: 1;
+    font-size: 48px; /* Adjusted font size for smaller screens */
+    font-weight: 450;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
 }
 
 .paragraph {
-  font-size: 41px;
-  text-align: left;
-  letter-spacing: 0px;
-  color: #000000;
-  opacity: 1;
-  margin-left: 175px;
-  }
+    font-size: 24px; /* Adjusted font size for smaller screens */
+    text-align: center; /* Center text on smaller screens */
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin: 0; /* Reset margin */
+}
 
-  .btn {
+.btn {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -94,21 +107,20 @@
     cursor: pointer;
     outline: none;
     padding: 5px 10px;
-    margin-top: 10px;
-    margin-left: 175px;
-  }
-  
-  .btn i {
+    margin: 10px auto; /* Center button horizontally */
+}
+
+.btn i {
     font-size: 26px;
     margin-left: 10px;
     color: #ffffff;
-  }
-  
-  .main{
-  filter:brightness(0);
-  }
+}
 
-  .checkbtn{
+.main {
+    filter: brightness(0);
+}
+
+.checkbtn {
     font-size: 30px;
     color: red;
     float: right;
@@ -117,8 +129,39 @@
     margin-bottom: 20px;
     cursor: pointer;
     display: none;
-  }
+}
 
-.check{
-  display: none;
+.check {
+    display: none;
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack header items on smaller screens */
+        text-align: center;
+    }
+
+    .navbar {
+        order: 2; /* Move the navbar below the header content */
+    }
+
+    .text {
+        flex-direction: column; /* Stack text content on smaller screens */
+    }
+
+    .content,
+    .image {
+        flex: none; /* Remove flex on smaller screens */
+    }
+
+    .paragraph {
+        margin: 0 auto; /* Center text horizontally */
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .btn {
+        margin-left: 0;
+    }
 }
